@@ -7,8 +7,6 @@
 
 import scrapy
 
-
 class NcovItem(scrapy.Item):
-    # define the fields for your item here like:
-    # name = scrapy.Field()
-    pass
+    date = scrapy.Field()
+    areaTree = scrapy.Field()
