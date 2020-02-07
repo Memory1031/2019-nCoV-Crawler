@@ -1,0 +1,24 @@
+CREATE TABLE `CommunityData`
+(
+    `id`                int          NOT NULL AUTO_INCREMENT,
+    `province`          varchar(255) NOT NULL DEFAULT '' COMMENT '省名',
+    `city`              varchar(255) NOT NULL DEFAULT '' COMMENT '市名',
+    `district`          varchar(255) NULL     DEFAULT '' COMMENT '区名',
+    `county`            varchar(255) NULL     DEFAULT '' COMMENT '镇名',
+    `street`            varchar(255) NULL     DEFAULT '' COMMENT '街道名',
+    `community`         varchar(255) NULL     DEFAULT '' COMMENT '小区名',
+    `show_address`      varchar(255) NOT NULL DEFAULT '' COMMENT '展示名称',
+    `full_address`      varchar(255) NOT NULL DEFAULT '' COMMENT '地址全称',
+    `cnt_inc_uncertain` int          NOT NULL DEFAULT -1 COMMENT '新增疑似',
+    `cnt_inc_certain`   int          NOT NULL DEFAULT -1 COMMENT '新增确诊',
+    `cnt_inc_die`       int          NOT NULL DEFAULT -1 COMMENT '新增死亡',
+    `cnt_inc_recure`    int          NOT NULL DEFAULT -1 COMMENT '新增救治',
+    `cnt_sum_uncertain` int          NOT NULL DEFAULT -1 COMMENT '总疑似',
+    `cnt_sum_certain`   int          NOT NULL DEFAULT -1 COMMENT '总确诊',
+    `cnt_sum_die`       int          NOT NULL DEFAULT -1 COMMENT '总死亡',
+    `lng`               double       NOT NULL DEFAULT 0 COMMENT '经度',
+    `lat`               double       NOT NULL DEFAULT 0 COMMENT '纬度',
+    PRIMARY KEY (`id`),
+    UNIQUE INDEX `index_fullAddress` (`full_address`) USING HASH
+)
+;

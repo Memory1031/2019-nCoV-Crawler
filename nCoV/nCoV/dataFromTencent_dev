@@ -1,0 +1,19 @@
+CREATE TABLE `dataFromTencent_dev`
+(
+    `Id`           int          NOT NULL AUTO_INCREMENT,
+    `provinceName` varchar(255) NOT NULL DEFAULT '' COMMENT '省名',
+    `cityName`     varchar(255) NOT NULL DEFAULT '' COMMENT '市名',
+    `date`         date         NOT NULL COMMENT '时间',
+    `totalConfirm` int          NOT NULL DEFAULT 0 COMMENT '总确诊',
+    `totalSuspect` int          NOT NULL DEFAULT 0 COMMENT '总疑似人数',
+    `totalDead`    int          NOT NULL DEFAULT 0 COMMENT '总死亡',
+    `totalHeal`    int          NOT NULL DEFAULT 0 COMMENT '总痊愈',
+    `todayConfirm` int          NOT NULL DEFAULT 0 COMMENT '新增确诊',
+    `todaySuspect` int          NOT NULL DEFAULT 0 COMMENT '今日疑似',
+    `todayDead`    int          NOT NULL DEFAULT 0 COMMENT '今日死亡',
+    `todayHeal`    int          NOT NULL DEFAULT 0 COMMENT '今日痊愈',
+    PRIMARY KEY (`Id`)
+)
+;
+INSERT dataFromTencent_dev (provinceName, date)
+VALUES ('latestUpdate', '2020-02-01')
