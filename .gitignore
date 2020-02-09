@@ -1,1 +1,4 @@
 /nCoV/application.txt
+/nCoV/project.egg-info/
+/nCoV/build/
+/nCoV/setup.py

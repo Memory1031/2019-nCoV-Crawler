@@ -10,7 +10,7 @@ import MySQLdb
 class NcovPipeline(object):
     def __init__(self):
         # 打开数据库连接
-        self.fb = open("application.txt", "r", encoding="utf8")
+        self.fb = open("application.txt", "r")
         self.db = MySQLdb.connect(self.fb.readline().strip(), self.fb.readline().strip(), self.fb.readline().strip(),
                                   "nCov", charset='utf8')
         self.fb.close()
