@@ -11,8 +11,9 @@ class NcovPipeline(object):
     def __init__(self):
         # 打开数据库连接
         self.fb = open("/home/spider/application.txt", "r")
-        self.db = MySQLdb.connect(self.fb.readline().strip(), self.fb.readline().strip(), self.fb.readline().strip(),
-                                  "nCov", charset='utf8')
+        self.db = MySQLdb.connect(host=self.fb.readline().strip(), user=self.fb.readline().strip(),
+                                  password=self.fb.readline().strip(), db="nCov",
+                                  charset='utf8')
         self.fb.close()
 
     def process_item(self, item, spider):
