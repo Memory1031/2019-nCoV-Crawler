@@ -4,14 +4,14 @@
 #
 # Don't forget to add your pipeline to the ITEM_PIPELINES setting
 # See: https://doc.scrapy.org/en/latest/topics/item-pipeline.html
-import MySQLdb
+import pymysql
 
 
 class NcovPipeline(object):
     def __init__(self):
         # 打开数据库连接
         self.fb = open("/home/spider/application.txt", "r")
-        self.db = MySQLdb.connect(host=self.fb.readline().strip(), user=self.fb.readline().strip(),
+        self.db = pymysql.connect(host=self.fb.readline().strip(), user=self.fb.readline().strip(),
                                   password=self.fb.readline().strip(), db="nCov",
                                   charset='utf8')
         self.fb.close()
