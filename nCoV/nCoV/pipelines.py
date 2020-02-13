@@ -10,7 +10,7 @@ import pymysql
 class NcovPipeline(object):
     def __init__(self):
         # 打开数据库连接
-        self.fb = open("/home/spider/application.txt", "r")
+        self.fb = open("./application.txt", "r")
         self.db = pymysql.connect(host=self.fb.readline().strip(), user=self.fb.readline().strip(),
                                   password=self.fb.readline().strip(), db="nCov",
                                   charset='utf8')
